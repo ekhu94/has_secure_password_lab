@@ -1,0 +1,9 @@
+<% if logged_in? %>
+    <h1>Hi, <%= current_user.name %></h1>
+<% else %>
+    <h1>Welcome to the Home Page</h1>
+<% end %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <%= submit_tag "Logout" %>
+<% end %>
