@@ -1,0 +1,18 @@
+<h1>Log In</h1>
+
+<%= flash.now[:user_error] %>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <div>
+        <%= label_tag "Name" %>
+        <%= text_field_tag :name, params[:name] %>
+    </div>
+    <div>
+        <%= label_tag "Password" %>
+        <%= password_field_tag :password, params[:password] %>
+    </div>
+    <%= submit_tag "Login" %>
+<% end %>
+
+<h3>Not yet a user?</h3>
+<button><%= link_to "Sign Up", new_user_path %></button>
